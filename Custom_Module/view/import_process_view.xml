@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <record id="view_import_products_form" model="ir.ui.view">
+            <field name="name">import.products.form</field>
+            <field name="model">import.products</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="upload_file"/>
+                        <field name="filename"/>
+                        <field name="process"/>
+                    </group>
+                    <footer>
+                        <button string="Process" class="oe_highlight" type="object" name="process_button"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_import_products_tree" model="ir.ui.view">
+            <field name="name">import.products.tree</field>
+            <field name="model">import.products</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="upload_file"/>
+                    <field name="filename"/>
+                    <field name="process"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
