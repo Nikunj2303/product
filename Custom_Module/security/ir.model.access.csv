@@ -1,6 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_import_products,import.products,model_import_products,,1,1,1,1
-access_part_code,part.code,model_part_code,,1,1,1,1
-access_search_term,search.term,model_search_term,,1,1,1,1
-access_product_specification,product.specification,model_product_specification,,1,1,1,1
-access_products_import_history,products.import.history,model_products_import_history,,1,1,1,1
