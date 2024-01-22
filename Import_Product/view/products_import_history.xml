@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_import_history_form" model="ir.ui.view">
+        <field name="name">products.import.history.form</field>
+        <field name="model">products.import.history</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="product_template_id"/>
+                        <field name="partner_id"/>
+                    </group>
+                    <group>
+                        <field name="old_price"/>
+                        <field name="new_price"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_product_import_history_tree" model="ir.ui.view">
+        <field name="name">products.import.history.tree</field>
+        <field name="model">products.import.history</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_template_id"/>
+                <field name="partner_id"/>
+                <field name="old_price"/>
+                <field name="new_price"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_products_import_history" model="ir.actions.act_window">
+        <field name="name">products import history</field>
+        <field name="res_model">products.import.history</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="Import_Product.view_product_import_history_form"/>
+    </record>
+
+
+    <menuitem id="menu_import_history"
+              name="Products"
+              parent="menu_import_products"
+              sequence="20"/>
+    <menuitem id="menu_products_history"
+              name="Products History"
+              parent="menu_import_history"
+              action="action_products_import_history"
+              sequence="20"/>
+</odoo>
