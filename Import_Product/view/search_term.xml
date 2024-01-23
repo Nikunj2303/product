@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_search_term_form" model="ir.ui.view">
+            <field name="name">search.term.form</field>
+            <field name="model">search.term</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="search_term"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_term_tree" model="ir.ui.view">
+            <field name="name">search.term.tree</field>
+            <field name="model">search.term</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="search_term"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_search_term" model="ir.actions.act_window">
+            <field name="name">search term</field>
+            <field name="res_model">search.term</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="Import_Product.view_search_term_form"/>
+        </record>
+
+        <menuitem id="menu_Configuration"
+                  name="Configuration"
+                  parent="menu_import_products"
+                  sequence="20"/>
+        <menuitem id="menu_term"
+                  name="Search term"
+                  parent="menu_Configuration"
+                  action="action_search_term"
+                  sequence="20"/>
+    </data>
+</odoo>

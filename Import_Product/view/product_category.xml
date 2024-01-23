@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_category_form_inherit" model="ir.ui.view">
+        <field name="name">product.category.form.inherit</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="inside">
+                <group>
+                    <field name="part_code_ids" widget="many2many_tags"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_product_category" model="ir.actions.act_window">
+        <field name="name">Product Category</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.category</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+
+    <menuitem id="menu_Configuration"
+              name="Configuration"
+              parent="menu_import_products"
+              sequence="20"/>
+    <menuitem id="menu_category"
+              name="Product Categories"
+              parent="menu_Configuration"
+              action="action_product_category"
+              sequence="20"/>
+
+</odoo>
